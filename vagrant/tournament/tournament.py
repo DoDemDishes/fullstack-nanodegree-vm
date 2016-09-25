@@ -35,11 +35,11 @@ def countPlayers():
     c = conn.cursor()
     c.execute('SELECT COUNT(*) FROM players')
     number_of_players = str(c.fetchall())
-    number_of_players = number_of_players.replace("[(","")
-    number_of_players = number_of_players.replace("L,)]" , "")
+    number_of_players = number_of_players.replace("[(", "")
+    number_of_players = number_of_players.replace("L,)]", "")
     number_of_players = int(number_of_players)
     c.close()
-    return(number_of_players)
+    return number_of_players
 
 
 def registerPlayer(name):
@@ -95,7 +95,7 @@ def playerStandings():
     ORDER BY wins DESC;')
     standings = c.fetchall()
     c.close()
-    return (standings)
+    return standings
 
 
 def reportMatch(winner, loser):
@@ -129,6 +129,6 @@ def swissPairings():
     """
     standings = playerStandings()
     pairs = []
-    for i in range(0,len(standings),2):
-        pairs.append([standings[i][0],standings[i][1],standings[i+1][0],standings[i+1][1]])
-    return(pairs)
+    for i in range(0, len(standings), 2):
+        pairs.append([standings[i][0], standings[i][1], standings[i + 1][0], standings[i + 1][1]])
+    return pairs
