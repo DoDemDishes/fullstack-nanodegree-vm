@@ -27,8 +27,10 @@ HTML_WRAP = '''\
     </style>
   </head>
   <body>
-    <h1>DB Forum</h1>
-    <form method=post action="/post">
+      <marquee>
+      <h1>DB Forum</h1>
+      </marquee>
+      <form method=post action="/post">
       <div><textarea id="content" name="content"></textarea></div>
       <div><button id="go" type="submit">Post message</button></div>
     </form>
